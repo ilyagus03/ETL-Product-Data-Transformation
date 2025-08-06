@@ -49,30 +49,20 @@ This project addresses the challenge of combining product order data from multip
 
 ```
 sql/
-├── 01_create_staging_table.sql       # Table schema definition
-├── 02_transform_2022_data.sql        # 2022 data transformation
-├── 03_transform_2023_data.sql        # 2023 data transformation
-├── 04_transform_2024_data.sql        # 2024 data transformation
-├── 05_data_validation.sql            # Checksum and validation
-└── complete_etl_script.sql           # Full transformation script
+├── IlyaGustafson_ETL_Assignment.sql       # Full ETL logic
 
 docs/
-├── project_requirements.md           # Business requirements
-├── data_dictionary.md                # Field definitions
-└── transformation_notes.md           # Technical decisions
+├── IlyaGustafson_Week8_ETL_Memo.docx      # Executive summary memo
 
 samples/
-├── 2022_data_sample.csv
-├── 2023_data_sample.csv
-├── 2024_data_sample.csv
-└── final_staging_sample.csv
+├── IlyaGustafson_ETL_StagingTable.csv     # Output of transformed staging table
 ```
 
 ## 🚀 Quick Start
 
-1. Run the complete ETL script: `sql/complete_etl_script.sql`
-2. Verify data quality: `sql/05_data_validation.sql`
-3. Check sample outputs in `samples/` folder
+1. Run the ETL script: `sql/IlyaGustafson_ETL_Assignment.sql`
+2. Review the memo in `docs/`
+3. View output sample in `samples/`
 
 ## 📈 Business Impact
 
@@ -115,8 +105,11 @@ samples/
 
 ## 📧 Contact
 
-Built as part of data engineering portfolio. Questions? Feel free to reach out!
+Developed for my DATA 330 final project and included in my Business Analytics portfolio to demonstrate data modeling, transformation logic, and quality validation.  
+- Questions? Feel free to reach out: https://www.linkedin.com/in/ilya-gustafson-83a042279/
 
 ---
 
 **Next Phase**: Quality assurance testing and analytical reporting implementation
+
+
