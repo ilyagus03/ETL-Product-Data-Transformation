@@ -46,3 +46,77 @@ This project addresses the challenge of combining product order data from multip
 - ETL best practices and data quality assurance
 
 ## 📁 Repository Structure
+
+```
+sql/
+├── 01_create_staging_table.sql       # Table schema definition
+├── 02_transform_2022_data.sql        # 2022 data transformation
+├── 03_transform_2023_data.sql        # 2023 data transformation
+├── 04_transform_2024_data.sql        # 2024 data transformation
+├── 05_data_validation.sql            # Checksum and validation
+└── complete_etl_script.sql           # Full transformation script
+
+docs/
+├── project_requirements.md           # Business requirements
+├── data_dictionary.md                # Field definitions
+└── transformation_notes.md           # Technical decisions
+
+samples/
+├── 2022_data_sample.csv
+├── 2023_data_sample.csv
+├── 2024_data_sample.csv
+└── final_staging_sample.csv
+```
+
+## 🚀 Quick Start
+
+1. Run the complete ETL script: `sql/complete_etl_script.sql`
+2. Verify data quality: `sql/05_data_validation.sql`
+3. Check sample outputs in `samples/` folder
+
+## 📈 Business Impact
+
+- Cross-year trend analysis capability
+- Consistent business reporting foundation
+- Reliable data for decision-making
+- Streamlined analytical workflows
+
+## 🔍 Key Learnings
+
+- **Data Evolution**: Handling changing business requirements across multiple years
+- **Field Calculation**: Computing derived metrics from incomplete source data
+- **Quality Assurance**: Implementing checksum validation for data integrity
+- **Schema Design**: Balancing standardization with source system constraints
+
+## 🏗️ Implementation Details
+
+### Data Quality Measures
+- **Checksum Validation**: `sum(yearInt * monthInt * orderTotal) % 2341 = 1537`
+- **NULL Handling**: Strategic use of NULL for missing/discontinued fields
+- **Field Validation**: Consistent data types across all years
+
+### Business Rules Applied
+- **2023 Shipping Issues**: Combined split quantities into single total
+- **2024 Discount Policy**: Subtracted quantity discounts from order subtotals
+- **Geographic Consistency**: Maintained regional data where available
+
+## 📚 Documentation
+
+- **Business Requirements**: See `docs/project_requirements.md`
+- **Data Dictionary**: Field definitions in `docs/data_dictionary.md`
+- **Technical Notes**: Implementation decisions in `docs/transformation_notes.md`
+
+## 🎯 Future Enhancements
+
+- Automated data validation scripts
+- Performance optimization for larger datasets
+- Integration with BI tools and dashboards
+- Error handling and logging mechanisms
+
+## 📧 Contact
+
+Built as part of data engineering portfolio. Questions? Feel free to reach out!
+
+---
+
+**Next Phase**: Quality assurance testing and analytical reporting implementation
